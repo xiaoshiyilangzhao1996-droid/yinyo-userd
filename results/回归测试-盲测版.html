@@ -1,0 +1,51 @@
+<section style="max-width:677px;margin:0 auto;padding:20px 16px;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;font-size:16px;color:#3f3f3f;line-height:1.9;letter-spacing:0.4px;">
+<section style="margin-bottom:24px;"><p style="font-size:12px;color:#d4a373;letter-spacing:2px;text-align:center;margin:0;">YINYO · 隐曜杂货铺</p></section>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">你试过让AI帮你断一卦吗。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">我上周试了。让ChatGPT排一个六爻卦，<b style="color:#5b8c5a;">世应</b>位置安反了。<b style="color:#5b8c5a;">GPT-5.3</b>。最基础的东西，相当于数学题第一步就列错了方程。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">换<b style="color:#5b8c5a;">Opus 4.6</b>。<b style="color:#5b8c5a;">纳甲</b><b style="color:#5b8c5a;">装卦</b>也出错。Gemini直接放弃，说它不会。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">这是2026年最强的几个模型。排卦都排不对，更别说断卦了。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">但说实话，这不是它们的错。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">六爻这个体系，传了两千年，中间出了无数流派，互相打架。光是最权威的两本古籍，「<b style="color:#d4a373;">增删卜易</b>」和「<b style="color:#d4a373;">卜筮正宗</b>」，有些断法就是反着来的。你让大模型把所有这些信息都吃进去，它自己也分不清该信谁。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">更关键的是，断卦不是背规则。是<b style="color:#5b8c5a;">判断秩序</b>。<b style="color:#5b8c5a;">120条</b>规则摆在那里，每一卦先看哪条，两条冲突了听谁的，什么时候结论要收着说，什么时候可以放开断。这些没人系统地写过，但每个断卦高手都在用。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">大模型没有这套秩序。你拿到手的不是判断，是<b style="color:#d4a373;">一锅粥</b>。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">所以我们干了一件事。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">从「<b style="color:#d4a373;">增删卜易</b>」<b style="color:#5b8c5a;">41万字</b>里，<b style="color:#5b8c5a;">蒸馏</b>出一个六爻断卦引擎。野鹤老人.skill。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">先说这本书为什么值得<b style="color:#5b8c5a;">蒸馏</b>。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">野鹤老人，本名丁耀亢，明末清初人。他花了<b style="color:#5b8c5a;">40年</b>干了一件事——把他老师教的古法全部拿去实测，好使的留，不好使的删。「增删」两个字就是这个意思。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">你看，一个人花了<b style="color:#5b8c5a;">40年</b>，把一门千年学问重新洗牌，只留真正能断准的规则。<b style="color:#5b8c5a;">41万字</b>，<b style="color:#5b8c5a;">120条</b>规则，<b style="color:#5b8c5a;">41<b style="color:#c0392b;">2个</b></b>他亲自断过的真实卦例。有年月日时，有卦象，有断法，有结果。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">这<b style="color:#5b8c5a;">41<b style="color:#c0392b;">2个</b></b>卦例就是天然的测试用例。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">我们做了什么。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">第一，把野鹤的<b style="color:#5b8c5a;">120条</b>规则全部编码成可执行的判断链路。引擎知道先看什么后看什么，知道冲突了怎么裁决。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">第二，给每条规则打了三重验证标签。V1看这条规则在不同类型的卦里是不是都出现过，V2看它能不能推断没见过的新卦，V3看它是不是只有野鹤体系才有的。规则多了会打架，这些标签就是优先级判据。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">第三，<b style="color:#5b8c5a;">33<b style="color:#c0392b;">5个</b></b>卦例全量回归测试。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">这个要说清楚。不是抽10个挑顺眼的验一下，是把原文里<b style="color:#5b8c5a;">41<b style="color:#c0392b;">2个</b></b>卦例能用的<b style="color:#5b8c5a;">33<b style="color:#c0392b;">5个</b></b>全部拿出来，让引擎重新断一遍，和野鹤的原文结论逐条比对。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">初始一致率<b style="color:#5b8c5a;">94%</b>。还有<b style="color:#c0392b;">7个</b>不一致。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">这<b style="color:#c0392b;">7个</b>我们逐条拆开，回原文重建野鹤当时的推理链。发现<b style="color:#c0392b;">5个</b>引擎逻辑bug，<b style="color:#c0392b;">2个</b>数据标注错误。修完复测。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;"><b style="color:#5b8c5a;">335条</b>，0不一致。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">我在Skill生态里没见过第二个做过这种规模的全量回归。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">第四，野鹤的<b style="color:#5b8c5a;">判断秩序</b>被完整复刻了。断卦最难的不是背规则，是<b style="color:#5b8c5a;">判断秩序</b>——先看什么，月建和动爻冲突先信谁，什么场景要反古法。野鹤从来没系统地写过这些，但他每断一个卦都在用。我们把这套秩序提取出来，嵌回了引擎。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">所以引擎断出来的卦，不只是结论对，推理过程也像野鹤。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">断完自动出两段。一段专业分析，懂行的人看。一段白话解读，不懂六爻的人也能看懂。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">比如我朋友后背长了个囊肿，起卦问什么时候能好。引擎断出来"「<b style="color:#5b8c5a;">近病逢空即愈</b>」"，然后白话跟了一段，大意就是别太担心，这种刚得的病遇到空亡反而是好事，很快能好，该看医生看医生。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">朋友说，"这次终于听明白了。"</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">你看，这才是我想做的。不是炫技，是让人能看懂。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">怎么做到的。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">灵感来自两个很佩服的项目。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;"><b style="color:#5b8c5a;">女娲.skill</b>，花叔做的，<b style="color:#5b8c5a;">12000+ star</b>。<b style="color:#5b8c5a;">蒸馏</b>人的思维方式。它教会我一件事，<b style="color:#5b8c5a;">蒸馏</b>不是搬运知识，是提取判断框架。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;"><b style="color:#5b8c5a;">仓颉.skill</b>，袋鼠帝做的。<b style="color:#5b8c5a;">蒸馏</b>书的知识体系，把大部头拆成可调用的结构。它教会我另一件事，书里的规则可以变成可执行链路。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">但单独用哪个都不够。女娲的验证是少量prompt测试，能证明像，很难证明稳。仓颉把书拆得很细，但不会自动长出判断优先级。三重验证标签和<b style="color:#5b8c5a;">判断秩序</b>提取，这两步是它们都没有的。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">所以是把两条路揉在一起，往前又推了一层。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">站在巨人肩膀上没什么不好。但光借力不长骨头，也走不远。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">三个项目，全部<b style="color:#5b8c5a;">MIT开源</b>。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">野鹤老人.skill — 千年六爻断卦引擎</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">github.com/xiaoshiyilangzhao1996-droid/yinyo-liuyao</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">女娲.skill — <b style="color:#5b8c5a;">蒸馏</b>任何人的思维方式</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">github.com/alchaincyf/nuwa-skill</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">仓颉.skill — <b style="color:#5b8c5a;">蒸馏</b>书的知识体系</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">github.com/kangarooking/cangjie-skill</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">如果你对六爻感兴趣，去试试。拿你手头的问题去跑，看它怎么判，怎么解释，怎么在规则冲突的时候裁决。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">试完你就知道了。</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">yinyo 隐曜</p>
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">一人AI实验室，真实评测 · 实用技能 · 自由探索。</p>
+<section style="text-align:center;margin-top:25px;"><p style="font-size:14px;color:#888;line-height:2;margin:0;"><span style="color:#d4a373;font-weight:bold;">yinyo 隐曜</span><br/>一人AI实验室，真实评测 · 实用技能 · 自由探索。</p></section>
+</section>

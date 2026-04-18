@@ -1,0 +1,114 @@
+<section style="max-width:677px;margin:0 auto;padding:20px 16px;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;font-size:16px;color:#3f3f3f;line-height:1.9;letter-spacing:0.4px;background:#fff8f0;">
+  <section style="margin-bottom:24px;">
+    <p style="font-size:12px;color:#d4a373;letter-spacing:2px;text-align:center;margin:0;">YINYO · 隐曜杂货铺</p>
+  </section>
+
+  <section style="margin:8px 0 24px;text-align:center;">
+    <p style="display:inline-block;font-size:26px;line-height:1.45;font-weight:700;color:#2f2f2f;margin:0;">335个卦例回归后我才敢发，野鹤老人.skill把不一致从7个修到0个</p>
+  </section>
+
+  <p style="margin:0 0 14px;">昨天晚上，我让一个AI学会了算命。不是那种陪聊式的玄学安慰，是按卦象一步一步推，推完还要讲人话，让不懂术语的人也能听懂。</p>
+  <p style="margin:0 0 14px;">我一开始只是想验证一个猜想。</p>
+  <p style="margin:0 0 14px;">女娲这条路很猛，蒸馏人的思维方式，已经证明能打。仓颉这条路也很猛，蒸馏书，把大部头拆成可调用结构，也很能打。</p>
+  <p style="margin:0 0 14px;">问题是，怎么说呢，这两条路都很强，但都不够我这次要的目标。</p>
+  <p style="margin:0 0 14px;">女娲的局限很直白，它更依赖公开信息，公开信息少的人很难蒸馏，而且验证通常是少量prompt，能证明像，但很难证明稳。仓颉的局限也直白，结构很完整，可作者真正的判断手感常常被抹平，规则之间谁优先谁让步，不会自动长出来。</p>
+  <p style="margin:0 0 14px;">你想想看，如果我要做的是六爻断卦引擎，只拿其中一条路，怎么够。</p>
+  <p style="margin:0 0 14px;">所以我干了一件更费事的事，我把两条路揉在一起，再往前推一层。</p>
+
+  <section style="background:#f0f5f0;border-radius:8px;padding:16px 18px;margin:20px 0;">
+    <p style="margin:0;font-size:15px;color:#5b8c5a;font-weight:700;">我这次的目标很直给</p>
+    <p style="margin:8px 0 0;">从《增删卜易》里蒸馏一个能落地的野鹤老人.skill，不是知识搬运，不是故事摘抄，是可执行、可复测、可修错。</p>
+  </section>
+
+  <p style="margin:0 0 14px;">这件事我做了一整天。</p>
+  <p style="margin:0 0 14px;">大约30个Codex Batch，0失败。</p>
+  <p style="margin:0 0 14px;">产物不是一篇讲义，而是一台引擎，120条规则，412个应验卦例，64卦纳甲常量，都进了可调用结构。我当时已经觉得够猛了，回头看，真正把项目拉开档次的，是后面四次升级。</p>
+
+  <section style="margin:30px 0 16px;text-align:center;">
+    <p style="display:inline-block;font-size:18px;font-weight:700;color:#5b8c5a;letter-spacing:1px;border-bottom:2px solid #d4a373;padding-bottom:6px;margin:0;">升级一，335条全量回归</p>
+  </section>
+
+  <p style="margin:0 0 14px;">其实吧，我最初也想走捷径，抽几十个代表样本验一验就行。可一想到这是要给人断事，我又把这个念头按下去了。</p>
+  <p style="margin:0 0 14px;">我直接从412条里抽335条做回归，初始一致率94。听上去不错，对吧。可我看到报告那一刻，心里一点都不踏实，因为还有7个不一致。</p>
+  <p style="margin:0 0 14px;">7个不一致放在演示稿里不致命，放在实际引擎里就是雷。</p>
+  <p style="margin:0 0 14px;">我把这7个挨个拆，逐条回原文，重建野鹤当时的推理链。是哪个触发条件没进来，是哪条冲突裁决写偏了，是不是应期判断压错了优先级，全都翻。</p>
+  <p style="margin:0 0 14px;">翻完我得到两个结论，5个是引擎逻辑bug，2个是数据标注错误。</p>
+
+  <section style="background:#fff5f5;border-radius:8px;padding:16px 18px;margin:20px 0;">
+    <p style="margin:0;color:#c0392b;font-weight:700;">修完再测，335条全通过，0不一致。</p>
+  </section>
+
+  <p style="margin:0 0 14px;">太离谱了。</p>
+  <p style="margin:0 0 14px;">我盯着测试结果看了很久，给我整懵了。</p>
+
+  <section style="margin:30px 0 16px;text-align:center;">
+    <p style="display:inline-block;font-size:18px;font-weight:700;color:#5b8c5a;letter-spacing:1px;border-bottom:2px solid #d4a373;padding-bottom:6px;margin:0;">升级二，三重验证标签</p>
+  </section>
+
+  <p style="margin:0 0 14px;">我给120条规则逐条标注V1、V2、V3。V1看跨域验证，V2看预测力，V3看独特性。回到这块，它的价值不在于好看，而在于引擎终于知道谁是主干规则，谁是辅助规则，谁只能在边界场景里调用。</p>
+  <p style="margin:0 0 14px;">如果不做这一步，系统会有一种假均匀感，看着每条都像真理，实战时全在抢话筒。</p>
+
+  <section style="margin:30px 0 16px;text-align:center;">
+    <p style="display:inline-block;font-size:18px;font-weight:700;color:#5b8c5a;letter-spacing:1px;border-bottom:2px solid #d4a373;padding-bottom:6px;margin:0;">升级三，表达DNA</p>
+  </section>
+
+  <p style="margin:0 0 14px;">断卦不是背词典，断卦靠秩序。先看什么，再看什么，冲突了先信谁，什么时刻反古法，什么时候结论要收，什么时候结论要放，这些决定了像不像野鹤。</p>
+  <p style="margin:0 0 14px;">我把这些写成可执行的判断框架，嵌回引擎。</p>
+  <p style="margin:0 0 14px;">你敢信，我不是在复述古文，我是在复刻一个判断者的秩序感。</p>
+
+  <section style="margin:30px 0 16px;text-align:center;">
+    <p style="display:inline-block;font-size:18px;font-weight:700;color:#5b8c5a;letter-spacing:1px;border-bottom:2px solid #d4a373;padding-bottom:6px;margin:0;">升级四，修错跑通</p>
+  </section>
+
+  <p style="margin:0 0 14px;">很多skill做到能跑就发布了，我以前也踩过这个坑。那种时刻最容易自我安慰，觉得先发再说。可这次我给自己定了铁规矩，发现问题就必须追到根上，修完必须回归复测。</p>
+  <p style="margin:0 0 14px;">说实话我也不确定自己能不能扛到底。</p>
+  <p style="margin:0 0 14px;">但这次我扛住了。</p>
+  <p style="margin:0 0 14px;">测试抓错，诊断根因，修复重跑，335条归零。这个过程听着朴素，做起来极耗心力。我做到收口的时候，一时间无语凝噎。</p>
+
+  <section style="background:#f0f0f8;border-radius:8px;padding:16px 18px;margin:20px 0;">
+    <p style="margin:0 0 6px;color:#6a5acd;font-weight:700;">达尔文评审结果</p>
+    <p style="margin:0;">8维度 72.8分，主要扣分是太大和不够工程化，接近6900行。我认可这个反馈，但我没瘦身，因为这份大不是赘肉，是41万字原著压出来的纹理。</p>
+  </section>
+
+  <p style="margin:0 0 14px;">你可能会问，这些漂亮话能不能落地。</p>
+  <p style="margin:0 0 14px;">我做了实战。</p>
+  <p style="margin:0 0 14px;">朋友后背囊肿，问何时能好。我按流程起卦，火泽睽变天泽履。引擎给出的核心判断是近病逢空即愈，应期很近，同时自动输出白话解释，连不懂六爻的人也能看懂。</p>
+  <p style="margin:0 0 14px;">朋友回我的第一句不是惊叹技术，而是说，这次终于听明白了，也觉得像那么回事。</p>
+  <p style="margin:0 0 14px;">很多朋友可能不知道，我为什么对这件事这么执着。因为我以前做过不少看着很聪明的系统，演示那天很好看，上线一个月就露馅。它们会回答，会组织语言，也会复述知识，可一到冲突场景就开始漂。今天说A，明天说B，问它为什么，它还能编出一段像模像样的解释。</p>
+  <p style="margin:0 0 14px;">我有时候觉得，这才是AI项目最危险的地方。不是它不会说，而是它太会说。</p>
+  <p style="margin:0 0 14px;">所以我这次反复强调回归测试、规则分级、修错复测，不是为了把文档做厚，是为了让引擎在关键时刻别乱来。你给它一个复杂卦象，它不能只挑顺耳的话。它得有次序，有取舍，有边界。</p>
+  <p style="margin:0 0 14px;">再往大一点看，从竹简到纸书，从纸书到数据库，从数据库到可调用的Agent技能，人类每一次知识迁移都不只是存储升级。真正的升级，是把判断标准也带过去。存储迁过去了，标准没迁过去，知识就会变成装饰。</p>
+  <p style="margin:0 0 14px;">你敢信，我做到这里最深的感受不是兴奋，是敬畏。古书里的很多句子看着短，背后其实是大量失败样本压出来的经验密度。我要做的，不是替它写一版现代版文案，而是尽量别把这种密度冲淡。</p>
+
+  <section style="background:#fffbf0;border-radius:8px;padding:16px 18px;margin:20px 0;border-left:3px solid #d4a373;">
+    <p style="margin:0;font-style:italic;color:#7c6f5b;">回到这块，我越来越确定，六爻蒸馏不是术语搬运，而是判断力保存。再往上看，知识工程真正难的，也不是记住多少信息，而是能不能在冲突场景里做出有依据的取舍。</p>
+  </section>
+
+  <p style="margin:0 0 14px;">这话听着有点刺耳但，我还是想讲。今天很多人都在做skill，很多仓库也都挺热闹。可只做展示，不做回归，不做修错，不做复测，跑得再快也容易虚。</p>
+  <p style="margin:0 0 14px;">我不是说别人不行。</p>
+  <p style="margin:0 0 14px;">我是在说，我自己这次走到这里，才敢稍微抬头，承认我摸到了一点门。</p>
+  <p style="margin:0 0 14px;">顺着上面的再聊聊，我也不打算把它神化。它依然有边界，婚姻类样本还偏少，实战反馈还要继续堆，工程化细节还能继续打磨。</p>
+  <p style="margin:0 0 14px;">可我至少完成了一次真正的升级。</p>
+  <p style="margin:0 0 14px;">我也知道，真正的检验不在文章里，在你下一次把真实问题丢给它的时候。它答得稳不稳，敢不敢承认边界，能不能给出可复核的推理链，这些才是硬标准。</p>
+  <p style="margin:0 0 14px;">我没有停在蒸馏一个人，也没有停在蒸馏一本书。我把两条路接上了，再往前推了一段。</p>
+  <p style="margin:0 0 14px;">站在巨人肩膀上，这没什么不好。</p>
+  <p style="margin:0 0 14px;">真正要紧的是，别只借力，不长骨头。</p>
+
+  <section style="background:#f6f8f6;border-radius:10px;padding:20px 22px;margin:24px 0;">
+    <p style="margin:0 0 10px;color:#5b8c5a;font-weight:700;">项目地址</p>
+    <p style="margin:0 0 8px;">野鹤老人.skill，MIT开源，README对标女娲风格</p>
+    <p style="margin:0 0 8px;color:#5b8c5a;word-break:break-all;">github.com/xiaoshiyilangzhao1996-droid/yinyo-liuyao</p>
+    <p style="margin:0;">安装命令，npx skills add xiaoshiyilangzhao1996-droid/yinyo-liuyao</p>
+  </section>
+
+  <p style="margin:0 0 14px;">如果你也在做agent项目，或者你正在找能上手实战的六爻引擎，去试试野鹤老人.skill。别光看README，直接拿你手头的问题去跑，看看它怎么判，怎么解释，怎么在冲突规则里裁决。</p>
+  <p style="margin:0 0 14px;">你试的这个动作，本身就在验证我这篇文章的结论。</p>
+  <p style="margin:0 0 14px;">千年智慧，不一定要被供在书架上，它也可以活在今天的AI里，继续帮人做判断。</p>
+
+  <section style="text-align:center;margin-top:26px;">
+    <p style="font-size:14px;color:#888;line-height:2;margin:0;">
+      <span style="color:#d4a373;font-weight:700;">yinyo 隐曜</span><br/>
+      一人AI实验室，真实评测 · 实用技能 · 自由探索。
+    </p>
+  </section>
+</section>

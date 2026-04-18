@@ -1,0 +1,4 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-04-16T23:45	baseline	yinyo-writer	-	75.7	baseline	-	重原则轻流程，缺执行序列和卡点处理	dry_run
+2026-04-16T23:49	R1	yinyo-writer	75.7	87.5	keep	Frontmatter+工作流+边界条件+资源整合	Frontmatter修正+10步执行序列+6卡点处理表+references完整列举+skill协作表	dry_run
+2026-04-17T01:52	R2	yinyo-writer	87.5	90.5	keep	指令具体性+检查点设计+架构	章节编号修复(二→二→三→四改为二→三→四→五→六)+新增第七章排版交付(含L5排版验收)+Step11加入L5检查	dry_run

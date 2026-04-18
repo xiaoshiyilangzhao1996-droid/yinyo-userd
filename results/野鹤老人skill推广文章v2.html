@@ -1,0 +1,132 @@
+<section style="max-width:677px;margin:0 auto;padding:20px 16px;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;font-size:16px;color:#3f3f3f;line-height:1.9;letter-spacing:0.4px;background:#fff8f0;">
+
+<section style="margin-bottom:24px;">
+<p style="font-size:12px;color:#d4a373;letter-spacing:2px;text-align:center;margin:0;">YINYO · 隐曜杂货铺</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">昨天试了一下，让AI断一个卦。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">火泽睽变天泽履，问朋友后背囊肿什么时候能好。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">引擎给出的判断是，近病逢空即愈，应期极近。然后自动跟了一段白话，大意是别担心，病邪落空了，很快就能好，该看医生看医生。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">朋友看完说了一句，"这次终于听明白了，也觉得像那么回事。"</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">我当时的第一反应不是高兴，是松了口气。因为这个引擎我花了整整一天验证，就怕它关键时刻掉链子。</p>
+
+<section style="background:#fff5f5;border-radius:8px;padding:18px 22px;margin:22px 0;">
+<p style="font-size:15px;color:#c0392b;line-height:2;margin:0;font-weight:bold;">你想想看，现在市面上有没有任何一个AI，任何一个Skill，任何一个Agent，能正儿八经断六爻，断得准，还能用人话解释清楚？</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">没有。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">通用大模型能背规则，但一碰真实卦象就飘。断出个吉凶还行，追问一句为什么，就开始编。再问应期，直接乱说。更别提那些需要多规则冲突裁决的复杂卦了，大模型在这个场景里完全不够看。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">说实话，这块也不是大模型的错。六爻断卦不是知识问答，它是一套判断系统。光记住规则没用，你得知道冲突的时候先信谁。大模型没有这个秩序感，它只会把所有规则平铺着往外吐。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">所以才有了<b style="color:#5b8c5a;">野鹤老人.skill</b>。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">这不是一个聊天机器人套了层玄学皮。这是一台从《增删卜易》41万字原文里蒸馏出来的规则引擎。120条经验规则，412个应验卦例，64卦纳甲常量，全部编码成可执行的判断链路。</p>
+
+<section style="margin:30px 0 20px;text-align:center;">
+<p style="display:inline-block;font-size:18px;font-weight:bold;color:#5b8c5a;letter-spacing:1px;border-bottom:2px solid #d4a373;padding-bottom:6px;margin:0;">几个硬指标</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">怎么说呢，这几个硬指标，是我敢发出来的底气。</p>
+
+<section style="background:#f0f5f0;border-radius:8px;padding:18px 20px;margin:18px 0;">
+<p style="font-size:14px;color:#5b8c5a;font-weight:bold;margin:0 0 8px;letter-spacing:1px;">335个卦例全量回归，修复后0不一致</p>
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0;">我说的不是抽10个挑顺眼的测一下。是把原文里412个卦例里能用的335个，全部拿出来，让引擎逐个断，然后和野鹤老人的原文结论逐条比对。</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">初始一致率94，听着还行对吧。可我心里一点都不踏实，因为还有7个不一致。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">这7个我挨个拆开，逐条回原文，重建野鹤当时的推理链。其实吧，这个过程极度耗心力，每一条都要翻到原文对应章节，看野鹤到底怎么推的，是哪个触发条件没进来，是哪条冲突裁决写偏了。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">翻完发现，5个是引擎逻辑bug，2个是数据标注错误。全部修完，复测。</p>
+
+<section style="background:#f6f8f6;border-radius:8px;padding:16px 22px;margin:22px 0;">
+<p style="font-size:15px;color:#5b8c5a;line-height:2;margin:0;font-weight:bold;">335条，0不一致。</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">这个数据放在整个Skill生态里，我不敢说绝后，但确实是空前。目前我没有见过第二个Skill做过这种规模的全量回归。</p>
+
+<section style="background:#f0f0f8;border-radius:8px;padding:18px 20px;margin:18px 0;">
+<p style="font-size:14px;color:#6a5acd;font-weight:bold;margin:0 0 8px;letter-spacing:1px;">120条规则，每条都有验证等级</p>
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0;">不是把古文抄进去就完了。120条规则全部标注了V1（跨域验证）、V2（预测力）、V3（独特性）三重验证标签。为什么这件事重要。因为规则多了之后，它们会打架。两条规则冲突的时候，引擎必须知道谁优先谁让步。三重验证标签就是给引擎一套优先级判据，主干规则、辅助规则、边界场景规则，各归各位。</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">如果没有这一步，120条规则就是120个人在抢话筒。听着都挺有道理，真到了复杂卦象谁也说不服谁。</p>
+
+<section style="background:#fff8f0;border-radius:8px;padding:18px 20px;margin:18px 0;">
+<p style="font-size:14px;color:#d4a373;font-weight:bold;margin:0 0 8px;letter-spacing:1px;">野鹤的判断秩序被完整复刻了</p>
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0;">断卦最难的不是背规则，是判断秩序。先看什么，再看什么，月建和动爻冲突先信谁，什么时候结论要收，什么时候要放，什么场景要反古法。这些东西散落在《增删卜易》41万字里，野鹤从没系统写过，但处处在用。我们把这套秩序提取出来，做成了可执行的判断框架，嵌回了引擎。</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">所以引擎断出来的卦，不只是结论对，推理过程也像野鹤。</p>
+
+<section style="margin:30px 0 20px;text-align:center;">
+<p style="display:inline-block;font-size:18px;font-weight:bold;color:#5b8c5a;letter-spacing:1px;border-bottom:2px solid #d4a373;padding-bottom:6px;margin:0;">怎么做到的</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">你敢信，做到这个程度有多难。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">女娲蒸馏人的思维方式，12000+ star，证明这条路能打。仓颉蒸馏书的知识体系，也很猛。但单独用女娲，做不到卦例回归验证。单独用仓颉，做不到判断秩序复刻和表达DNA提取。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">我们把两条路揉在一起，往前又推了一层。</p>
+
+<section style="background:#f6f8f6;border-radius:8px;padding:18px 22px;margin:18px 0;">
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0 0 4px;">🌲 三重验证标签是女娲方法论里没有的</p>
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0 0 4px;">🌊 表达DNA是仓颉方法论里没有的</p>
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0;">🏔️ 全量回归测试+修错闭环，在整个Skill生态里几乎没有先例</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">站在巨人肩膀上没什么不好，但别只借力不长骨头。</p>
+
+<section style="margin:30px 0 20px;text-align:center;">
+<p style="display:inline-block;width:60px;height:1px;background:linear-gradient(to right,#d4a373,#5b8c5a);"></p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">回到这块，为什么我要把这件事做到这个程度。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">其实吧，我太清楚AI在专业领域最容易犯什么毛病了。不是它不会说，是它太会说。演示那天很好看，上线一个月就露馅。一到冲突场景就漂，今天说A明天说B，问它为什么，还能编出一段像模像样的解释。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">太离谱了。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">所以我说这个Skill的核心不是技术炫技，是<b style="color:#5b8c5a;">可信</b>。</p>
+
+<section style="background:#f6f8f6;border-radius:8px;padding:18px 22px;margin:18px 0;">
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0 0 4px;">🌲 335卦例回归是可信</p>
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0 0 4px;">🌊 三重验证标签是可信</p>
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0 0 4px;">🏔️ 7个bug追到根因修到归零是可信</p>
+<p style="font-size:15px;color:#3f3f3f;line-height:2;margin:0;">🌾 不瘦身保住判断密度，也是可信</p>
+</section>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">如果你对六爻感兴趣，或者你正在找一个真正能断卦的AI引擎，去试试。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">别光看README。拿你手头的问题去跑，看它怎么判，怎么解释，怎么在冲突规则之间裁决。</p>
+
+<p style="font-size:16px;color:#3f3f3f;line-height:2;margin:0 0 16px;">你试的这个动作，本身就在验证我这篇文章说的每一句话。</p>
+
+<section style="background:#fffbf0;border-radius:8px;padding:16px 20px;margin:20px 0;border-left:3px solid #d4a373;">
+<p style="font-size:15px;color:#7c6f5b;line-height:1.8;margin:0;font-style:italic;">千年智慧，不一定要被供在书架上，它也可以活在今天的AI里，继续帮人做判断。</p>
+</section>
+
+<section style="background:#f6f8f6;border-radius:10px;padding:22px 24px;margin:30px 0;">
+<p style="font-size:15px;color:#5b8c5a;font-weight:bold;margin:0 0 14px;letter-spacing:1px;">📎 野鹤老人 · Skill</p>
+<p style="font-size:15px;line-height:2;margin:0 0 12px;">
+<b style="color:#d4a373;">千年六爻，一剑蒸馏</b><br/>
+<span style="color:#888;">从41万字古籍蒸馏野鹤先生40年断卦智慧</span><br/>
+<span style="color:#5b8c5a;font-size:14px;">https://github.com/xiaoshiyilangzhao1996-droid/yinyo-liuyao</span>
+</p>
+<p style="font-size:14px;color:#888;line-height:1.8;margin:0;">MIT开源 · 一键安装<br/>npx skills add xiaoshiyilangzhao1996-droid/yinyo-liuyao</p>
+</section>
+
+<section style="text-align:center;margin-top:25px;">
+<p style="font-size:14px;color:#888;line-height:2;margin:0;">
+<span style="color:#d4a373;font-weight:bold;">yinyo 隐曜</span><br/>
+一人AI实验室，真实评测 · 实用技能 · 自由探索。
+</p>
+</section>
+
+</section>
