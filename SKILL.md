@@ -1,8 +1,8 @@
 ---
 name: yinyo-writer
-version: "3.5"
+version: "3.6"
 last_updated: "2026-05-01"
-changelog: "v3.5: 输出HTML样式升级为花叔红色组件长文版——保留隐曜写作思维链，只替换排版层；按Codex对标花叔评分修正，采用红底白字标题块、紧凑正文、红色表头、红色轻底强调和微信原生长文节奏"
+changelog: "v3.6: 沉淀 DeepSeek 视觉原语推文最终版方法论——以花叔95分微信原生感为底线，增加100+挑战版的主题视觉化策略，并固化最终融合版HTML参数、主观表达配比、摘要/代码/尾注微调规则"
 description: |
   隐曜公众号引流写作方法论。主文风融合花叔DNA（短句/具体/结论先行）。
   输入素材（skill推广/热点蹭流/产品体验），输出公众号深度长文+HTML排版。
@@ -860,6 +860,160 @@ yinyo 隐曜
 **段落长度。** 正文段落2-4句，超过4句必须拆分。
 
 **结尾句要短。** ≤15字，有余味。
+
+### 8.8 DeepSeek视觉原语推文实战沉淀（v3.6）
+
+> 来源：2026-05-01《DeepSeek 给 Agent 装了一根手指》公众号推文。
+> 过程：花叔对标版约96分 → 100+挑战版 → 最终融合版 → 最终微调版 → 发布。
+> 核心结论：**先达到花叔的微信原生阅读感，再让文章主题长出自己的视觉语言。**
+
+#### 8.8.1 花叔95分线：微信原生感优先于设计感
+
+花叔风格不是“复杂设计”，而是读者打开后觉得这就是一篇自然、成熟、可信的微信长文。
+
+必须保留的底线：
+- 白底黑字，正文承担80%以上的信息。
+- 开头先给结论，不要先堆背景。
+- 段落短，2-4句为主，长文也要保持扫读节奏。
+- 红底白字标题块可以用，但不能每个组件都像模板。
+- 表格、代码、引用、摘要只做阅读断点，不做装饰物。
+- 读者读的是文章，不是排版秀。
+
+#### 8.8.2 100+挑战：不是更像花叔，而是更懂主题
+
+当文章已经达到花叔95分线，不要继续“更红、更像”。下一步是问：
+
+**这篇文章自己的主题，能不能变成视觉语言？**
+
+DeepSeek视觉原语这篇的答案是“空间指认系统”：
+- 红色不是品牌色，而是指针色。
+- 坐标、点、框、路径线不是代码装饰，而是文章主题本身。
+- 表格高亮不是为了好看，而是把读者视线指到关键差异。
+- 标题节奏不是模板复用，而是让读者感到文章在一步步定位问题。
+
+迁移规则：
+- 写技术论文解读：把论文关键词转成排版语法。
+- 写产品体验：把产品核心交互转成排版语法。
+- 写方法论：把方法步骤转成排版语法。
+- 写Skill推广：把Skill最强能力转成视觉锚点。
+
+#### 8.8.3 最终融合版原则：高级感不能牺牲可读性
+
+100+挑战版容易犯四个错：
+1. 摘要组件过重，扫读效率下降。
+2. 深色代码块视觉冲击强，但在白底长文里割裂。
+3. 第一人称过多，个人博客感压过冷静解析。
+4. 结尾金句卡片过重，读者读完长文后会觉得重复升华。
+
+最终融合规则：
+- **以挑战版为主体，吸收95分版的克制。**
+- 视觉主题化要保留，但所有组件必须回到“读者更好读”。
+- 个人判断保留，但主观插入语控制在30%左右。
+- 金句可以有，但不要像营销卡片一样压在署名后面。
+
+#### 8.8.4 DeepSeek最终版HTML参数（微信可复制）
+
+外层容器：
+```html
+<section style="background-color:#ffffff;padding:18px 12px 40px;max-width:700px;margin:0 auto;box-sizing:border-box;word-wrap:break-word;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;color:#1a1a1a;line-height:1.85;font-size:16px;letter-spacing:0;">
+```
+
+首屏标题组：
+```html
+<p style="margin:0 0 8px;font-size:13px;line-height:1.6;color:#d32f2f;font-weight:700;letter-spacing:0.5px;">DeepSeek 视觉原语论文深度解读</p>
+<p style="margin:0 0 10px;font-size:23px;line-height:1.42;color:#111111;font-weight:800;letter-spacing:-0.2px;">主标题</p>
+<section style="margin:8px 0 22px;padding:0 0 0 12px;border-left:3px solid #d32f2f;box-sizing:border-box;"><p style="margin:0;color:#666666;font-size:16px;line-height:1.75;">首段引用/副标题</p></section>
+```
+
+开篇五条结论：
+```html
+<section style="margin:0 0 28px;padding:12px 0 14px;border-top:1px solid #f1d6d6;border-bottom:1px solid #f1d6d6;background:#ffffff;box-sizing:border-box;">
+  <p style="margin:0 0 8px;font-size:15px;line-height:1.78;color:#1a1a1a;"><b style="font-weight:700;color:#111111;">1、</b>结论内容</p>
+</section>
+```
+
+注意：最终版用纯文本序号，不用圆点胶囊。圆点醒目但拉高30%左右垂直空间，技术读者扫读效率下降。条目间距用`8px`，不要回到`7px`，呼吸感更好。
+
+正文段落：
+```html
+<p style="margin:18px 0;font-size:16px;line-height:1.85;color:#1a1a1a;">正文</p>
+```
+
+短强调句：
+```html
+<p style="margin:20px 0;font-size:17px;line-height:1.75;color:#111111;font-weight:800;">强调句</p>
+```
+
+强强调：
+```html
+<b style="color:#b71c1c;background:linear-gradient(transparent 58%,rgba(211,47,47,.16) 58%);padding:0 2px;border-radius:0;font-weight:800;">关键词</b>
+```
+
+原则：红色下划重点比红底胶囊更克制。每节只给1处核心判断，别满屏红。
+
+二级标题两种节奏：
+```html
+<h2 style="font-size:20px;font-weight:600;color:#ffffff;line-height:1.4;margin:32px 0 16px;padding:11px 18px;background-color:#d32f2f;border-radius:4px;box-sizing:border-box;">标题</h2>
+<h2 style="background:none;color:#111111;border-left:5px solid #d32f2f;padding:2px 0 2px 12px;font-size:21px;line-height:1.45;font-weight:800;margin:32px 0 16px;box-sizing:border-box;">标题</h2>
+```
+
+规则：红底标题是花叔标志，但长文里每个标题都同构会疲劳。每3个标题穿插一次左线开放标题。
+
+代码/坐标块：
+```html
+<section style="margin:16px 0 20px;padding:12px 14px;background:#f5f5f5;border-left:4px solid #d32f2f;border-radius:6px;box-sizing:border-box;">
+  <p style="margin:0;font-family:Menlo,Consolas,monospace;font-size:14px;line-height:1.7;color:#333333;white-space:pre-wrap;letter-spacing:.2px;">&lt;|point|&gt;...&lt;|/point|&gt;</p>
+</section>
+```
+
+教训：黑底代码块第一眼专业，但白底长文里割裂，且简单坐标示例不值得这么强的视觉中断。最终版用浅灰底+红线，既有主题识别，又不刺眼。
+
+表格：
+- 表头用`#b71c1c`白字。
+- 关键行用`background:rgba(211,47,47,.06);font-weight:700;`。
+- 关键数字可用`font-size:18px;color:#d32f2f;font-weight:900;`。
+
+尾部品牌标识：
+```html
+<section style="margin:38px 0 0;padding-top:18px;border-top:1px solid #eeeeee;">
+  <p style="margin:0;font-size:13px;line-height:1.82;color:#999999;"><span style="color:#d32f2f;font-weight:700;">隐曜杂货铺</span><br/>一人 AI 实验室，真实评测，实用技能，自由探索。</p>
+</section>
+```
+
+不要把尾部品牌做成黑色金句卡片。长文读完后，尾部越干净越高级。
+
+#### 8.8.5 主观表达配比
+
+第一人称是发动机，但不是油门踩到底。
+
+技术深度解析的推荐配比：
+- 70%：客观解释、论文事实、机制拆解。
+- 30%：个人判断、写作者偏好、经验推论。
+
+需要降噪的表达：
+- “我认为这篇论文最重要的意义是” → “这篇论文最重要的意义是”
+- “我更愿意把它理解成” → “更准确的理解是”
+- “对我来说，最大的启发是” → “最大的启发是”
+- “我觉得这篇论文最好的标题不是” → “这篇论文最好的标题不是”
+
+保留第一人称的场景：
+- 真实体验、真实试用、真实犯错。
+- 明显是个人审美判断，不适合伪装成事实。
+- 文章需要人格温度的开头/转折/结尾。
+
+#### 8.8.6 DeepSeek类论文解读最终验收清单
+
+发布前逐项检查：
+- [ ] 开头5条结论能在15秒内扫完。
+- [ ] 摘要不是报告卡片，而像作者开场说话。
+- [ ] 标题块有节奏变化，不是机械复制。
+- [ ] 代码块不刺眼，不打断长文阅读流。
+- [ ] 红色只指关键位置，不是满屏装饰。
+- [ ] 表格后的判断能帮读者理解差异，不只是摆数据。
+- [ ] 第一人称没有压过论文事实。
+- [ ] 结尾不重复营销，不强行升华。
+- [ ] 尾部品牌标识轻，但有识别度。
+- [ ] 微信复制后无`<style>`、无`class=`、无`div`依赖，尽量纯内联样式。
 
 ### 8.8 花叔风格自检标尺
 
