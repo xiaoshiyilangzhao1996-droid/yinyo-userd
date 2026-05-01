@@ -1,12 +1,14 @@
 # 微信公众号 HTML 花叔式极简长文排版规范
 
 > yinyo-writer 产出的公众号推文，最终以带排版的 HTML 交付，方便直接复制到公众号编辑器。  
-> v3.3 起，排版层从「卡兹克式极简」升级为「花叔式极简长文」：仍然白底黑字、短段落、少卡片，但增强长文的摘要、节奏、标题力度、表格和代码表达。  
+> v3.4 起，排版层升级为「花叔式95分长文版」：重点不再只是结构规则，而是把舒服感本身固化——更稳的灰度、更克制的配色、更顺的段距、更强但不炸眼的标题、更柔和的摘要块。  
 > 注意：这里只替换输出样式，不替换 yinyo-writer 的写作方法论、选题逻辑、质检体系和花叔 DNA。
 
 ---
 
 ## 0. 样式目标
+
+这版的目标不是“像公众号文章”，而是“看上去就舒服，能撑住 6000-10000 字还不累”。
 
 一句话：
 
@@ -25,12 +27,29 @@
 
 ---
 
-## 1. 全局容器
+## 1. 95分观感参数
+
+推荐固定参数：
+
+- 外层容器：`max-width:700px; padding:18px 14px 42px;`
+- 正文字号：`16px`
+- 正文行高：`1.92 ~ 1.95`
+- 正文字色：`#222222`
+- 标题字色：`#111111`
+- 摘要背景：`#FAF9F7`
+- 摘要左线：`#D9C2A0`
+- 代码浅底：`#F3F2EF` 或 `#F7F6F3`
+- 分割线：`#EEEEEE`
+- 尾注灰：`#999999`
+
+这些参数看起来很小，但舒服感基本就藏在这里。
+
+## 2. 全局容器
 
 所有内容包在一个外层 `<section>` 中。
 
 ```html
-<section style="background-color:#fff;padding:16px 12px 36px;max-width:700px;margin:0 auto;box-sizing:border-box;word-wrap:break-word;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;color:#222;line-height:1.9;font-size:16px;letter-spacing:0.2px;">
+<section style="background-color:#fff;padding:18px 14px 42px;max-width:700px;margin:0 auto;box-sizing:border-box;word-wrap:break-word;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;color:#222;line-height:1.9;font-size:16px;letter-spacing:0.2px;">
   <!-- 正文 -->
 </section>
 ```
@@ -45,12 +64,12 @@
 
 ---
 
-## 2. 文章标题
+## 3. 文章标题
 
 标题左对齐，黑色，不居中，不加背景。
 
 ```html
-<p style="margin:0 0 22px;font-size:24px;line-height:1.45;color:#111;font-weight:800;">
+<p style="margin:0 0 22px;font-size:26px;line-height:1.42;color:#111;font-weight:800;">
 文章标题
 </p>
 ```
@@ -64,14 +83,14 @@
 
 ---
 
-## 3. 开头摘要区
+## 4. 开头摘要区
 
 花叔式长文的关键是开头先帮读者抓重点。超过 2500 字的文章，必须有摘要区。
 
 ### 3.1 超长预警 + 核心总结
 
 ```html
-<section style="margin:0 0 26px;padding:14px 16px;background:#FAFAFA;border-left:3px solid #D8C3A5;box-sizing:border-box;">
+<section style="margin:0 0 26px;padding:14px 16px 12px;background:#FAF9F7;border-left:3px solid #D9C2A0;box-sizing:border-box;">
   <p style="margin:0 0 10px;font-size:15px;line-height:1.85;color:#555;">
   超长预警，这篇文章预计阅读时长 12 分钟。如果你只想看结论，先看这四条：
   </p>
@@ -100,19 +119,19 @@
 如果文章少于 2000 字，可以直接开头：
 
 ```html
-<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222;">
+<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222222;">
 先说结论。
 </p>
 ```
 
 ---
 
-## 4. 正文段落
+## 5. 正文段落
 
 ### 4.1 普通段落
 
 ```html
-<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222;">
+<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222222;">
 正文内容。
 </p>
 ```
@@ -130,7 +149,7 @@
 适合放核心判断、反共识句、章节前的钩子。
 
 ```html
-<p style="margin:26px 0 20px;font-size:17px;line-height:1.85;color:#111;font-weight:800;">
+<p style="margin:26px 0 20px;font-size:17px;line-height:1.88;color:#111111;font-weight:800;">
 真正的问题，不是看得清，而是指得准。
 </p>
 ```
@@ -143,12 +162,12 @@
 
 ---
 
-## 5. 小标题（判断式标题）
+## 6. 小标题（判断式标题）
 
 花叔式标题一般是判断句，短、有态度，不是「一、背景介绍」这种公文标题。
 
 ```html
-<p style="margin:34px 0 16px;font-size:20px;line-height:1.55;color:#111;font-weight:800;">
+<p style="margin:34px 0 16px;font-size:21px;line-height:1.55;color:#111111;font-weight:800;">
 主流派在解决「看得清」，DeepSeek 在解决「指得准」
 </p>
 ```
@@ -182,7 +201,7 @@
 
 ---
 
-## 6. 强调规则
+## 7. 强调规则
 
 ### 6.1 默认黑色加粗
 
@@ -222,7 +241,7 @@
 
 ---
 
-## 7. 列表写法
+## 8. 列表写法
 
 花叔式列表多数是自然段，不是 bullet 列表。
 
@@ -250,7 +269,7 @@
 
 ---
 
-## 8. 表格
+## 9. 表格
 
 技术对比、模型数据、版本时间线可以用表格。表格要朴素，不要彩色大表。
 
@@ -283,12 +302,12 @@
 
 ---
 
-## 9. 代码、坐标、论文符号（轻量代码/坐标块）
+## 10. 代码、坐标、论文符号（轻量代码/坐标块）
 
 ### 9.1 行内代码
 
 ```html
-<code style="font-family:Menlo,Consolas,monospace;font-size:14px;background:#F6F6F6;color:#333;padding:1px 4px;border-radius:3px;">prompt-master</code>
+<code style="font-family:Menlo,Consolas,monospace;font-size:14px;background:#F3F2EF;color:#333;padding:1px 4px;border-radius:3px;">prompt-master</code>
 ```
 
 适合：仓库名、变量名、模型名、短代码。
@@ -296,7 +315,7 @@
 ### 9.2 代码块 / 坐标块
 
 ```html
-<section style="margin:18px 0;padding:12px 14px;background:#F7F7F7;border-radius:6px;box-sizing:border-box;">
+<section style="margin:18px 0;padding:12px 14px;background:#F7F6F3;border-radius:6px;box-sizing:border-box;">
 <p style="margin:0;font-family:Menlo,Consolas,monospace;font-size:13px;line-height:1.75;color:#333;white-space:pre-wrap;">
 &lt;|point|&gt;[[357,369],[260,372]]&lt;|/point|&gt;
 </p>
@@ -311,12 +330,12 @@
 
 ---
 
-## 10. 引用
+## 11. 引用
 
 引用论文原文、外部文档、用户原话时，用左线引用。
 
 ```html
-<section style="margin:22px 0;padding:2px 0 2px 14px;border-left:3px solid #D8C3A5;box-sizing:border-box;">
+<section style="margin:22px 0;padding:2px 0 2px 14px;border-left:3px solid #D9C2A0;box-sizing:border-box;">
 <p style="margin:0;font-size:15px;line-height:1.9;color:#555;">
 引用内容。
 </p>
@@ -331,7 +350,7 @@
 
 ---
 
-## 11. 图片
+## 12. 图片
 
 ```html
 <p style="margin:24px 0;text-align:center;">
@@ -349,7 +368,7 @@
 
 ---
 
-## 12. 分割线
+## 13. 分割线
 
 ```html
 <section style="margin:34px 0;border-top:1px solid #EEE;"></section>
@@ -359,7 +378,7 @@
 
 ---
 
-## 13. 尾注
+## 14. 尾注
 
 尾注要轻，不要像广告牌。
 
@@ -374,7 +393,7 @@
 
 ---
 
-## 14. 禁止事项
+## 15. 禁止事项
 
 禁止：
 
@@ -391,7 +410,7 @@
 
 ---
 
-## 15. 交付前 L5 检查
+## 16. 交付前 L5 检查
 
 排版完成后必须检查：
 
@@ -416,7 +435,7 @@
 
 ---
 
-## 16. 交付方式
+## 17. 交付方式
 
 公众号推文产出时，同时提供：
 
