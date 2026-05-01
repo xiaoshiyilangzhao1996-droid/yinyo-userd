@@ -1,14 +1,14 @@
 # 微信公众号 HTML 花叔式极简长文排版规范
 
 > yinyo-writer 产出的公众号推文，最终以带排版的 HTML 交付，方便直接复制到公众号编辑器。  
-> v3.4 起，排版层升级为「花叔式95分长文版」：重点不再只是结构规则，而是把舒服感本身固化——更稳的灰度、更克制的配色、更顺的段距、更强但不炸眼的标题、更柔和的摘要块。  
+> v3.5 起，排版层升级为「花叔红色组件长文版」：以花叔原文为标尺，不再走米色高级极简；核心是微信原生发布感、红色强品牌锚点、红底白字标题块、红色表头、紧凑正文节奏。  
 > 注意：这里只替换输出样式，不替换 yinyo-writer 的写作方法论、选题逻辑、质检体系和花叔 DNA。
 
 ---
 
 ## 0. 样式目标
 
-这版的目标不是“像公众号文章”，而是“看上去就舒服，能撑住 6000-10000 字还不累”。
+这版的目标不是“高级极简”，而是“接近花叔原文观感”：红色锚点强、标题切段明确、正文紧凑、组件丰富但不花。
 
 一句话：
 
@@ -27,29 +27,30 @@
 
 ---
 
-## 1. 95分观感参数
+## 1. 花叔红色组件参数
 
 推荐固定参数：
 
-- 外层容器：`max-width:700px; padding:18px 14px 42px;`
+- 外层容器：`max-width:700px; padding:16px 12px 36px;`
 - 正文字号：`16px`
-- 正文行高：`1.92 ~ 1.95`
-- 正文字色：`#222222`
-- 标题字色：`#111111`
-- 摘要背景：`#FAF9F7`
-- 摘要左线：`#D9C2A0`
-- 代码浅底：`#F3F2EF` 或 `#F7F6F3`
-- 分割线：`#EEEEEE`
-- 尾注灰：`#999999`
+- 正文行高：`1.85`
+- 正文字色：`#1A1A1A`
+- 主品牌红：`#D32F2F`
+- 标题块：红底白字，`font-size:20px; line-height:1.4; padding:12px 20px; border-radius:4px;`
+- 正文段落：`margin:18px 0`，不要过松
+- 表格表头：`background:#D32F2F; color:#FFFFFF; padding:10px 14px;`
+- 强调：关键强判断可用红字浅红底，`rgba(211,47,47,0.08)`
+- 摘要：优先普通正文连续段；如用摘要块，必须用红色左线，不用米色 Notion 感
+- 代码/坐标块：浅灰底 + 红色左线，避免程序员文档感
 
-这些参数看起来很小，但舒服感基本就藏在这里。
+舒服感不等于低饱和。花叔的舒服感来自：正文克制 + 红色组件做节奏锚点。
 
 ## 2. 全局容器
 
 所有内容包在一个外层 `<section>` 中。
 
 ```html
-<section style="background-color:#fff;padding:18px 14px 42px;max-width:700px;margin:0 auto;box-sizing:border-box;word-wrap:break-word;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;color:#222;line-height:1.9;font-size:16px;letter-spacing:0.2px;">
+<section style="background-color:#fff;padding:16px 12px 36px;max-width:700px;margin:0 auto;box-sizing:border-box;word-wrap:break-word;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;color:#1A1A1A;line-height:1.85;font-size:16px;letter-spacing:0.2px;">
   <!-- 正文 -->
 </section>
 ```
@@ -69,7 +70,7 @@
 标题左对齐，黑色，不居中，不加背景。
 
 ```html
-<p style="margin:0 0 22px;font-size:26px;line-height:1.42;color:#111;font-weight:800;">
+<p style="margin:0 0 22px;font-size:24px;line-height:1.45;color:#111;font-weight:800;">
 文章标题
 </p>
 ```
@@ -90,7 +91,7 @@
 ### 3.1 超长预警 + 核心总结
 
 ```html
-<section style="margin:0 0 26px;padding:14px 16px 12px;background:#FAF9F7;border-left:3px solid #D9C2A0;box-sizing:border-box;">
+<section style="margin:0 0 26px;padding:14px 16px 12px;background:rgba(211,47,47,0.05);border-left:4px solid #D32F2F;box-sizing:border-box;">
   <p style="margin:0 0 10px;font-size:15px;line-height:1.85;color:#555;">
   超长预警，这篇文章预计阅读时长 12 分钟。如果你只想看结论，先看这四条：
   </p>
@@ -119,7 +120,7 @@
 如果文章少于 2000 字，可以直接开头：
 
 ```html
-<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222222;">
+<p style="margin:0 0 18px;font-size:16px;line-height:1.85;color:#1A1A1A;">
 先说结论。
 </p>
 ```
@@ -131,7 +132,7 @@
 ### 4.1 普通段落
 
 ```html
-<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222222;">
+<p style="margin:0 0 18px;font-size:16px;line-height:1.85;color:#1A1A1A;">
 正文内容。
 </p>
 ```
@@ -162,14 +163,14 @@
 
 ---
 
-## 6. 小标题（判断式标题）
+## 6. 小标题（红底判断式标题）
 
-花叔式标题一般是判断句，短、有态度，不是「一、背景介绍」这种公文标题。
+花叔式标题一般是红底白字块，短、有态度，承担长文切段功能，不是「一、背景介绍」这种公文标题。
 
 ```html
-<p style="margin:34px 0 16px;font-size:21px;line-height:1.55;color:#111111;font-weight:800;">
+<h2 style="font-size:20px;font-weight:600;color:#fff;line-height:1.4;margin:32px 0 16px;padding:12px 20px;background-color:#D32F2F;border-radius:4px;box-sizing:border-box;">
 主流派在解决「看得清」，DeepSeek 在解决「指得准」
-</p>
+</h2>
 ```
 
 标题规则：
@@ -220,7 +221,7 @@
 ### 6.2 品牌橙少量使用
 
 ```html
-<b style="font-weight:700;color:#B7793E;">Skill Radar</b>
+<b style="font-weight:700;color:#D32F2F;background-color:rgba(211,47,47,0.08);padding:2px 6px;border-radius:3px;">Skill Radar</b>
 ```
 
 只用于：
@@ -229,7 +230,7 @@
 - 核心方法名
 - 文章最重要概念
 
-每 800 字不超过 2 处。
+每 800 字不超过 2-3 处。红色是节奏锚点，不是荧光笔。
 
 ### 6.3 警示暗红极少使用
 
@@ -271,15 +272,15 @@
 
 ## 9. 表格
 
-技术对比、模型数据、版本时间线可以用表格。表格要朴素，不要彩色大表。
+技术对比、模型数据、版本时间线可以用表格。表格要有红色表头，这是花叔长文的重要视觉锚点。不要做彩色大杂烩，但表头必须有识别度。
 
 ```html
 <table style="width:100%;border-collapse:collapse;margin:22px 0;font-size:14px;line-height:1.7;color:#222;">
   <thead>
     <tr>
-      <th style="border-bottom:1px solid #E5E5E5;padding:8px 6px;text-align:left;font-weight:700;color:#111;">模型</th>
-      <th style="border-bottom:1px solid #E5E5E5;padding:8px 6px;text-align:left;font-weight:700;color:#111;">KV cache 条目</th>
-      <th style="border-bottom:1px solid #E5E5E5;padding:8px 6px;text-align:left;font-weight:700;color:#111;">平均分</th>
+      <th style="background-color:#D32F2F;color:#FFFFFF;padding:10px 14px;text-align:left;font-weight:600;border:none;">模型</th>
+      <th style="background-color:#D32F2F;color:#FFFFFF;padding:10px 14px;text-align:left;font-weight:600;border:none;">KV cache 条目</th>
+      <th style="background-color:#D32F2F;color:#FFFFFF;padding:10px 14px;text-align:left;font-weight:600;border:none;">平均分</th>
     </tr>
   </thead>
   <tbody>
@@ -294,9 +295,9 @@
 
 表格规则：
 
-- 只用浅灰边线。
-- 表头黑色加粗。
-- 不做彩色表头。
+- 正文只用浅灰边线。
+- 表头红底白字。
+- 不做多色表头。
 - 不做复杂合并单元格。
 - 移动端优先，列数不超过 4。
 

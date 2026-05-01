@@ -1,8 +1,8 @@
 ---
 name: yinyo-writer
-version: "3.4"
+version: "3.5"
 last_updated: "2026-05-01"
-changelog: "v3.4: 输出HTML样式升级为花叔式95分长文版——保留隐曜写作思维链，只替换排版层；固化更舒服的灰度、间距、摘要块、标题力度、表格与代码浅底参数，目标接近花叔长文观感"
+changelog: "v3.5: 输出HTML样式升级为花叔红色组件长文版——保留隐曜写作思维链，只替换排版层；按Codex对标花叔评分修正，采用红底白字标题块、紧凑正文、红色表头、红色轻底强调和微信原生长文节奏"
 description: |
   隐曜公众号引流写作方法论。主文风融合花叔DNA（短句/具体/结论先行）。
   输入素材（skill推广/热点蹭流/产品体验），输出公众号深度长文+HTML排版。
@@ -233,7 +233,7 @@ Step 7: 起标题（具体事实+情绪钩子）          → 不用抽象概括
 Step 8: 加尾注（固定格式）                  → 每篇必加
 Step 9: 四层质检（L1→L2→L3→L4）            → 跳过任何一层都不行
 Step 10: 修复质检问题 → 重跑直到全通过
-Step 11: 排版为HTML（读取 references/wechat-html-layout.md） → 花叔式95分长文L5排版检查 → 交付公众号推文HTML
+Step 11: 排版为HTML（读取 references/wechat-html-layout.md） → 花叔红色组件长文L5排版检查 → 交付公众号推文HTML
 ```
 
 ### 常见卡点处理
@@ -679,7 +679,7 @@ yinyo 隐曜
 
 ### 7.1 排版流程
 
-1. 读取 `references/wechat-html-layout.md` 获取花叔式95分长文 HTML 规范
+1. 读取 `references/wechat-html-layout.md` 获取花叔红色组件长文 HTML 规范
 2. 将 Markdown 文章转为内联样式 HTML（微信不支持 `<style>` 和 class）
 3. 使用花叔式极简长文样式：开头摘要、白底黑字、短段落、判断式标题、朴素表格、轻量代码/坐标块、少卡片、少颜色、少 emoji
 4. 80% 以上内容用普通 `<p>` 段落承载，关键句可独立成段
