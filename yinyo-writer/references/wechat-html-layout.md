@@ -1,56 +1,36 @@
-# 微信公众号 HTML 极简排版规范
+# 微信公众号 HTML 花叔式极简长文排版规范
 
-> yinyo-writer 产出的推广文章，最终以带排版的 HTML 交付，方便直接复制到公众号编辑器。  
-> v3.2 起，排版层切换为「卡兹克式极简阅读样式」：少装饰、少卡片、少颜色，靠短段落、留白、少量加粗和自然节奏完成阅读体验。  
+> yinyo-writer 产出的公众号推文，最终以带排版的 HTML 交付，方便直接复制到公众号编辑器。  
+> v3.3 起，排版层从「卡兹克式极简」升级为「花叔式极简长文」：仍然白底黑字、短段落、少卡片，但增强长文的摘要、节奏、标题力度、表格和代码表达。  
 > 注意：这里只替换输出样式，不替换 yinyo-writer 的写作方法论、选题逻辑、质检体系和花叔 DNA。
 
 ---
 
-## 0. 排版总原则
+## 0. 样式目标
 
 一句话：
 
-> 像一篇真人写的公众号长文，不像一张花里胡哨的信息海报。
+> 像花叔那种能撑住 9000 字技术长文的公众号排版：干净、密集、能读下去，不像模板海报。
 
-执行原则：
+这套样式复刻的不是某个颜色，而是阅读体验：
 
-1. **白底黑字为主。** 不使用大面积彩色背景，不做渐变，不做装饰性头图块。
-2. **段落就是主要组件。** 80% 以上内容用普通 `<p>` 承载。
-3. **少用卡片。** 卡片只用于引用、关键结论、链接信息；普通列表不进卡片。
-4. **少用颜色。** 只保留黑、灰、品牌橙、暗红四类颜色。
-5. **少用 emoji。** 不把 emoji 当行首符号，不用 `🌲/✅/📌/🔥` 做列表装饰。
-6. **少用小标题。** 长文优先靠自然转场和短段落推进；如果必须分节，用极简数字标题。
-7. **不做稀疏大块。** 不把一句话撑成一个大色块。
-8. **强调只服务阅读。** 加粗和变色只给关键词、数字、方法名、核心判断。
-
----
-
-## 1. 配色方案
-
-| 用途 | 色值 | 说明 |
-|---|---|---|
-| 正文 | `#222222` | 主体文字，接近黑色 |
-| 次级文字 | `#666666` | 注释、说明、链接前后辅助文字 |
-| 弱文字 | `#999999` | 尾注、时间、署名 |
-| 品牌橙 | `#D4A373` | 少量关键词、链接、尾注品牌名 |
-| 暗红 | `#C0392B` | 警示、反例、强判断，慎用 |
-| 引用线 | `#E6D3BD` | 引用左边线 |
-| 分割线 | `#EEEEEE` | 极浅灰分割线 |
-| 引用背景 | `#FAFAFA` | 只用于引用块，极浅灰 |
-
-禁止临时新增饱和色。禁止大面积绿色、蓝紫、粉色、渐变。
+1. **开头先给读者减负。** 长文必须有「超长预警 / 核心总结 / 先说结论」一类摘要区。
+2. **正文靠短段落推进。** 一段一个意思，很多句子可以单独成段。
+3. **小标题少，但要有力量（判断式标题）。** 标题像判断句，不像 PPT 栏目名。
+4. **重点靠加粗，不靠彩色卡片。** 关键判断、数字、方法名可以加粗。
+5. **表格可以用。** 涉及模型对比、评分、时间线、参数时，表格比散文清楚。
+6. **代码/坐标/论文术语要轻量呈现。** 用等宽字体或浅灰代码块，不做炫技代码框。
+7. **少 emoji。** 不用 emoji 当列表符号。
+8. **广告感要低。** 尾注轻，CTA 轻，不要像知识星球海报。
 
 ---
 
-## 2. 全局容器
+## 1. 全局容器
 
 所有内容包在一个外层 `<section>` 中。
 
 ```html
-<section style="max-width:677px;margin:0 auto;padding:8px 16px 40px;
-  box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',
-  'PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;
-  font-size:16px;color:#222;line-height:1.9;letter-spacing:0.2px;background:#fff;">
+<section style="background-color:#fff;padding:16px 12px 36px;max-width:700px;margin:0 auto;box-sizing:border-box;word-wrap:break-word;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;color:#222;line-height:1.9;font-size:16px;letter-spacing:0.2px;">
   <!-- 正文 -->
 </section>
 ```
@@ -60,14 +40,76 @@
 - 不使用 `<style>`。
 - 不使用 class。
 - 不使用 `<div>`。
-- 只用 `<section>`、`<p>`、`span`、`b`、`a`、`img`。
+- 样式全部内联。
 - 微信编辑器兼容优先。
 
 ---
 
-## 3. 基础组件
+## 2. 文章标题
 
-### 3.1 普通段落，默认组件
+标题左对齐，黑色，不居中，不加背景。
+
+```html
+<p style="margin:0 0 22px;font-size:24px;line-height:1.45;color:#111;font-weight:800;">
+文章标题
+</p>
+```
+
+标题规则：
+
+- 一篇只出现一次。
+- 不用 emoji 开头。
+- 不加下划线。
+- 不做居中大字报。
+
+---
+
+## 3. 开头摘要区
+
+花叔式长文的关键是开头先帮读者抓重点。超过 2500 字的文章，必须有摘要区。
+
+### 3.1 超长预警 + 核心总结
+
+```html
+<section style="margin:0 0 26px;padding:14px 16px;background:#FAFAFA;border-left:3px solid #D8C3A5;box-sizing:border-box;">
+  <p style="margin:0 0 10px;font-size:15px;line-height:1.85;color:#555;">
+  超长预警，这篇文章预计阅读时长 12 分钟。如果你只想看结论，先看这四条：
+  </p>
+  <p style="margin:0 0 8px;font-size:15px;line-height:1.85;color:#222;">
+  <b style="font-weight:700;color:#111;">1、</b>第一条核心结论。
+  </p>
+  <p style="margin:0 0 8px;font-size:15px;line-height:1.85;color:#222;">
+  <b style="font-weight:700;color:#111;">2、</b>第二条核心结论。
+  </p>
+  <p style="margin:0;font-size:15px;line-height:1.85;color:#222;">
+  <b style="font-weight:700;color:#111;">3、</b>第三条核心结论。
+  </p>
+</section>
+```
+
+摘要区规则：
+
+- 只用于开头，不要全文到处放卡片。
+- 背景只用极浅灰。
+- 左侧细线即可，不做大面积彩色块。
+- 3-5 条为宜。
+- 每条必须是真结论，不是目录。
+
+### 3.2 短文不用摘要卡
+
+如果文章少于 2000 字，可以直接开头：
+
+```html
+<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222;">
+先说结论。
+</p>
+```
+
+---
+
+## 4. 正文段落
+
+### 4.1 普通段落
 
 ```html
 <p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222;">
@@ -75,158 +117,123 @@
 </p>
 ```
 
-要求：
+段落规则：
 
-- 一段只讲一个意思。
-- 多用短段落。
-- 关键句可以单独成段。
-- 不要为了排版把短句塞进卡片。
+- 一段尽量 20-80 字。
+- 一个段落只讲一个意思。
+- 不要把多个判断塞进一段。
+- 长句拆短。
+- 关键转折可以单独成段。
 
-### 3.2 关键短句，独立成段
+### 4.2 独立判断句
 
-```html
-<p style="margin:26px 0 22px;font-size:17px;line-height:1.9;color:#222;font-weight:700;">
-真正的问题，不是会不会安装。
-</p>
-```
-
-适合：转折、核心判断、段落钩子。
-
-不要滥用。每 800-1000 字出现 1-2 次即可。
-
-### 3.3 行内强调
+适合放核心判断、反共识句、章节前的钩子。
 
 ```html
-<b style="color:#222;font-weight:700;">关键词</b>
-```
-
-默认加粗只用黑色。不要每个关键词都染色。
-
-### 3.4 品牌橙强调，慎用
-
-```html
-<b style="color:#D4A373;font-weight:700;">王正元 AI 生产系统实践</b>
-```
-
-适合：
-
-- 方法名
-- 产品名
-- 项目名
-- 文章最核心概念
-
-每 500 字不超过 2-3 处。
-
-### 3.5 暗红警示，极少用
-
-```html
-<b style="color:#C0392B;font-weight:700;">不要伪造官方背书</b>
-```
-
-只用于风险、反例、强警示。
-
----
-
-## 4. 标题与分节
-
-### 4.1 文章标题
-
-```html
-<p style="margin:0 0 24px;font-size:24px;line-height:1.45;color:#111;font-weight:800;">
-文章标题
-</p>
-```
-
-标题只出现一次。
-
-### 4.2 极简分节标题
-
-如果文章必须分节，用这种：
-
-```html
-<p style="margin:34px 0 16px;font-size:18px;line-height:1.6;color:#111;font-weight:800;">
-1、先说结论
+<p style="margin:26px 0 20px;font-size:17px;line-height:1.85;color:#111;font-weight:800;">
+真正的问题，不是看得清，而是指得准。
 </p>
 ```
 
 规则：
 
+- 不要滥用。
+- 每 800-1200 字出现 1 次左右。
+- 必须像人话判断，不要像口号。
+
+---
+
+## 5. 小标题（判断式标题）
+
+花叔式标题一般是判断句，短、有态度，不是「一、背景介绍」这种公文标题。
+
+```html
+<p style="margin:34px 0 16px;font-size:20px;line-height:1.55;color:#111;font-weight:800;">
+主流派在解决「看得清」，DeepSeek 在解决「指得准」
+</p>
+```
+
+标题规则：
+
+- 左对齐。
+- 不编号也可以。
 - 不居中。
-- 不加下划线。
-- 不加背景色。
 - 不加 emoji。
-- 不用 `##` 的视觉效果。
+- 不加背景。
+- 不加下划线。
+- 标题本身要有信息量。
 
-### 4.3 自然转场优先
+差标题：
 
-如果不是方法论/清单文，优先不用分节标题，用普通段落自然转场：
+```text
+一、项目背景
+二、技术分析
+三、总结
+```
 
-```html
-<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222;">
-说到这里，我想先把一个误区拆掉。
-</p>
+好标题：
+
+```text
+为什么 coding agent 必须有视觉
+主流派在解决「看得清」，DeepSeek 在解决「指得准」
+真正的差距出现在拓扑推理
+这件事对普通用户意味着什么
 ```
 
 ---
 
-## 5. 引用与重点块
+## 6. 强调规则
 
-### 5.1 极简引用块
-
-```html
-<section style="margin:24px 0;padding:2px 0 2px 16px;border-left:3px solid #E6D3BD;">
-<p style="margin:0;font-size:16px;line-height:1.9;color:#555;">
-引用内容或金句。
-</p>
-</section>
-```
-
-引用块不加大背景。最多用极浅灰。
-
-### 5.2 轻提示块，少用
+### 6.1 默认黑色加粗
 
 ```html
-<section style="margin:24px 0;padding:16px 18px;background:#FAFAFA;border-radius:6px;">
-<p style="margin:0;font-size:15px;line-height:1.9;color:#333;">
-这里放一个高密度总结，不放普通列表。
-</p>
-</section>
+<b style="font-weight:700;color:#111;">关键判断</b>
 ```
 
-只用于：总结、关键提醒、链接说明。
+使用对象：
 
-禁止：一行一个卡片、emoji 列表卡片、彩色多卡片。
+- 核心概念
+- 关键数字
+- 方法名
+- 反共识判断
+- 文章结论
+
+### 6.2 品牌橙少量使用
+
+```html
+<b style="font-weight:700;color:#B7793E;">Skill Radar</b>
+```
+
+只用于：
+
+- 自有产品名
+- 核心方法名
+- 文章最重要概念
+
+每 800 字不超过 2 处。
+
+### 6.3 警示暗红极少使用
+
+```html
+<b style="font-weight:700;color:#B42318;">不要伪造官方背书</b>
+```
+
+只用于风险、错误口径、强警示。
 
 ---
 
-## 6. 列表处理
+## 7. 列表写法
 
-### 6.1 普通并列，用正文写
+花叔式列表多数是自然段，不是 bullet 列表。
 
-不要这样：
-
-```html
-<section>✅ 第一项</section>
-<section>✅ 第二项</section>
-<section>✅ 第三项</section>
-```
-
-应该这样：
-
-```html
-<p style="margin:0 0 18px;font-size:16px;line-height:1.95;color:#222;">
-这里面至少包括 <b style="font-weight:700;color:#222;">记忆</b>、Skill、工具编排、多 Agent 协作、验收和沉淀。
-</p>
-```
-
-### 6.2 必须分条时，用普通段落
+### 7.1 普通分条
 
 ```html
 <p style="margin:0 0 12px;font-size:16px;line-height:1.9;color:#222;">
-<b style="font-weight:700;color:#222;">第一，工具使用。</b>解决的是怎么跑起来。
+<b style="font-weight:700;color:#111;">第一，</b>它解决的是反复出现的问题。
 </p>
 <p style="margin:0 0 12px;font-size:16px;line-height:1.9;color:#222;">
-<b style="font-weight:700;color:#222;">第二，Skill 开发。</b>解决的是怎么把经验复用起来。
+<b style="font-weight:700;color:#111;">第二，</b>它有稳定流程，而不是靠灵感发挥。
 </p>
 ```
 
@@ -234,40 +241,97 @@
 
 - 不用 `<ul>`。
 - 不用 emoji bullet。
-- 不用大色块包裹普通列表。
+- 不用一行一个彩色卡片。
+- 分条之间间距比普通段落略小。
+
+### 7.2 开头摘要可以用数字条
+
+摘要区允许 `1、2、3、4、`，但仍然用 `<p>`。
 
 ---
 
-## 7. 链接处理
+## 8. 表格
 
-### 7.1 普通链接
+技术对比、模型数据、版本时间线可以用表格。表格要朴素，不要彩色大表。
 
 ```html
-<p style="margin:0 0 18px;font-size:15px;line-height:1.9;color:#666;">
-公开资料，<span style="color:#D4A373;">https://example.com</span>
-</p>
+<table style="width:100%;border-collapse:collapse;margin:22px 0;font-size:14px;line-height:1.7;color:#222;">
+  <thead>
+    <tr>
+      <th style="border-bottom:1px solid #E5E5E5;padding:8px 6px;text-align:left;font-weight:700;color:#111;">模型</th>
+      <th style="border-bottom:1px solid #E5E5E5;padding:8px 6px;text-align:left;font-weight:700;color:#111;">KV cache 条目</th>
+      <th style="border-bottom:1px solid #E5E5E5;padding:8px 6px;text-align:left;font-weight:700;color:#111;">平均分</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-bottom:1px solid #F0F0F0;padding:8px 6px;">DeepSeek</td>
+      <td style="border-bottom:1px solid #F0F0F0;padding:8px 6px;">~90</td>
+      <td style="border-bottom:1px solid #F0F0F0;padding:8px 6px;">77.2%</td>
+    </tr>
+  </tbody>
+</table>
 ```
 
-微信里链接不一定可点，重点是可读、可复制。
+表格规则：
 
-### 7.2 链接信息块，少用
+- 只用浅灰边线。
+- 表头黑色加粗。
+- 不做彩色表头。
+- 不做复杂合并单元格。
+- 移动端优先，列数不超过 4。
+
+---
+
+## 9. 代码、坐标、论文符号（轻量代码/坐标块）
+
+### 9.1 行内代码
 
 ```html
-<section style="margin:26px 0;padding:16px 18px;background:#FAFAFA;border-radius:6px;">
-<p style="margin:0 0 8px;font-size:15px;line-height:1.8;color:#222;font-weight:700;">
-公开资料
-</p>
-<p style="margin:0;font-size:14px;line-height:1.8;color:#D4A373;">
-https://example.com
+<code style="font-family:Menlo,Consolas,monospace;font-size:14px;background:#F6F6F6;color:#333;padding:1px 4px;border-radius:3px;">prompt-master</code>
+```
+
+适合：仓库名、变量名、模型名、短代码。
+
+### 9.2 代码块 / 坐标块
+
+```html
+<section style="margin:18px 0;padding:12px 14px;background:#F7F7F7;border-radius:6px;box-sizing:border-box;">
+<p style="margin:0;font-family:Menlo,Consolas,monospace;font-size:13px;line-height:1.75;color:#333;white-space:pre-wrap;">
+&lt;|point|&gt;[[357,369],[260,372]]&lt;|/point|&gt;
 </p>
 </section>
 ```
 
-只在文章末尾或项目介绍处使用。
+规则：
+
+- 只用于必要的代码、坐标、论文格式示例。
+- 不要把普通金句放进代码块。
+- 背景浅灰即可。
 
 ---
 
-## 8. 图片
+## 10. 引用
+
+引用论文原文、外部文档、用户原话时，用左线引用。
+
+```html
+<section style="margin:22px 0;padding:2px 0 2px 14px;border-left:3px solid #D8C3A5;box-sizing:border-box;">
+<p style="margin:0;font-size:15px;line-height:1.9;color:#555;">
+引用内容。
+</p>
+</section>
+```
+
+规则：
+
+- 不加大背景。
+- 不用引号图标。
+- 引用之后必须用人话解释。
+
+---
+
+## 11. 图片
 
 ```html
 <p style="margin:24px 0;text-align:center;">
@@ -278,51 +342,69 @@ https://example.com
 图片说明：
 
 ```html
-<p style="margin:-10px 0 22px;font-size:13px;line-height:1.7;color:#999;text-align:center;">
+<p style="margin:-8px 0 22px;font-size:13px;line-height:1.7;color:#999;text-align:center;">
 图片说明
 </p>
 ```
 
 ---
 
-## 9. 分割线
+## 12. 分割线
 
 ```html
 <section style="margin:34px 0;border-top:1px solid #EEE;"></section>
 ```
 
-只用于明显章节转折或尾注前。
+只用于明显转场或尾注前。
 
 ---
 
-## 10. 尾注
+## 13. 尾注
+
+尾注要轻，不要像广告牌。
 
 ```html
-<section style="margin:34px 0 0;padding-top:18px;border-top:1px solid #EEE;">
+<section style="margin:36px 0 0;padding-top:18px;border-top:1px solid #EEE;">
 <p style="margin:0;font-size:13px;line-height:1.8;color:#999;">
-<span style="color:#D4A373;font-weight:700;">yinyo 隐曜</span><br/>
-一人AI实验室，真实评测，实用技能，自由探索。
+<span style="color:#B7793E;font-weight:700;">隐曜杂货铺</span><br/>
+一人 AI 实验室，真实评测，实用技能，自由探索。
 </p>
 </section>
 ```
 
-尾注要轻，不要像广告牌。
+---
+
+## 14. 禁止事项
+
+禁止：
+
+- 大面积彩色卡片。
+- 彩色渐变背景。
+- emoji 列表。
+- 居中标题。
+- 下划线标题。
+- 一句话一个大卡片。
+- 满屏橙色/红色高亮。
+- PPT 式信息块堆叠。
+- 使用 `<style>`、class、`<div>`。
+- 把正文拆得过稀，读起来像广告落地页。
 
 ---
 
-## 11. 交付前 L5 检查
+## 15. 交付前 L5 检查
 
 排版完成后必须检查：
 
 | 检查项 | 标准 |
 |---|---|
-| 极简程度 | 80% 以上内容是普通段落，不是卡片 |
+| 长文摘要 | 超过 2500 字必须有开头摘要区 |
+| 段落 | 80% 以上内容是普通 `<p>` 段落 |
+| 标题 | 左对齐、无背景、无 emoji、标题本身有判断 |
+| 强调 | 以黑色加粗为主，橙色极少 |
+| 表格 | 数据对比优先用朴素表格 |
+| 代码 | 仓库名/坐标/短代码用轻量 `code` 或浅灰代码块 |
+| 卡片 | 除开头摘要外，全文卡片不超过 2 个 |
 | 背景 | 全文白底为主，无大面积彩色背景 |
-| 颜色 | 只使用黑、灰、品牌橙、暗红、极浅灰 |
-| 卡片 | 不超过 3 个，且只用于引用、总结、链接 |
-| 标题 | 不居中、不下划线、不 emoji 装饰 |
-| 列表 | 无 emoji 行首列表，无一行一个大块 |
-| 强调 | 加粗服务阅读，不满屏彩色高亮 |
 | 微信兼容 | 全部内联样式，无 `<style>`，无 class，无 `<div>` |
 | 方法论保留 | 只改排版样式，不改变文章内容逻辑和写作质检 |
 
@@ -330,15 +412,15 @@ https://example.com
 
 目标观感：
 
-> 一篇干净、有呼吸感、像真人认真写出来的公众号长文。
+> 一篇干净、有呼吸感、能撑住长文阅读的公众号文章。
 
 ---
 
-## 12. 交付方式
+## 16. 交付方式
 
-推广文章产出时，同时提供：
+公众号推文产出时，同时提供：
 
 1. **Markdown 原文**，用于二次修改。
-2. **极简排版 HTML**，嵌入邮件正文 + 作为 `.html` 附件。
+2. **花叔式极简排版 HTML**，嵌入邮件正文 + 作为 `.html` 附件。
 
 HTML 只负责阅读体验，不负责炫技。

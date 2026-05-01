@@ -1,8 +1,8 @@
 ---
 name: yinyo-writer
-version: "3.2"
+version: "3.3"
 last_updated: "2026-05-01"
-changelog: "v3.2: 输出HTML样式切换为卡兹克式极简阅读版——保留隐曜写作思维链，只替换排版层；白底黑字、短段落、少卡片、少颜色、少emoji，新增极简L5检查"
+changelog: "v3.3: 输出HTML样式升级为花叔式极简长文版——保留隐曜写作思维链，只替换排版层；强化开头摘要、长文短段落、判断式标题、朴素表格、轻量代码/坐标块和长文L5检查"
 description: |
   隐曜公众号引流写作方法论。主文风融合花叔DNA（短句/具体/结论先行）。
   输入素材（skill推广/热点蹭流/产品体验），输出公众号深度长文+HTML排版。
@@ -233,7 +233,7 @@ Step 7: 起标题（具体事实+情绪钩子）          → 不用抽象概括
 Step 8: 加尾注（固定格式）                  → 每篇必加
 Step 9: 四层质检（L1→L2→L3→L4）            → 跳过任何一层都不行
 Step 10: 修复质检问题 → 重跑直到全通过
-Step 11: 排版为HTML（读取 references/wechat-html-layout.md） → L5排版快速检查 → 交付带排版的HTML
+Step 11: 排版为HTML（读取 references/wechat-html-layout.md） → 花叔式长文L5排版检查 → 交付公众号推文HTML
 ```
 
 ### 常见卡点处理
@@ -265,7 +265,7 @@ Step 11: 排版为HTML（读取 references/wechat-html-layout.md） → L5排版
 → 排版问题不阻塞交付，标注"排版待修复"，后续单独补
 
 **邮件发送失败**
-→ 把HTML文件保存到本地（skills/{skill-name}/推广文章.html）
+→ 把HTML文件保存到本地（skills/{skill-name}/公众号推文.html）
 → 告诉用户文件位置，用户可以手动复制
 
 **写之前方向确认**
@@ -679,9 +679,9 @@ yinyo 隐曜
 
 ### 7.1 排版流程
 
-1. 读取 `references/wechat-html-layout.md` 获取极简 HTML 规范
+1. 读取 `references/wechat-html-layout.md` 获取花叔式极简长文 HTML 规范
 2. 将 Markdown 文章转为内联样式 HTML（微信不支持 `<style>` 和 class）
-3. 使用卡兹克式极简阅读样式：白底黑字、短段落、自然留白、少卡片、少颜色、少 emoji
+3. 使用花叔式极简长文样式：开头摘要、白底黑字、短段落、判断式标题、朴素表格、轻量代码/坐标块、少卡片、少颜色、少 emoji
 4. 80% 以上内容用普通 `<p>` 段落承载，关键句可独立成段
 5. 所有代码用 `<section>` 和 `<p>` 为主，不用 `<div>`，不写 `<style>`，不写 class
 6. 普通并列信息直接写进正文或用「第一/第二/第三」短段落，不做彩色列表卡片
@@ -705,8 +705,8 @@ yinyo 隐曜
 
 ### 7.3 交付方式
 
-- Markdown原文写入文件（`推广文章.md`）
-- 排版HTML通过邮件发送（正文HTML + .html附件），方便直接复制到公众号编辑器
+- Markdown原文写入文件（`公众号推文.md`）
+- 公众号推文HTML通过邮件发送（正文HTML + .html附件），方便直接复制到公众号编辑器
 
 ---
 
@@ -991,6 +991,6 @@ references/
 
 | 场景 | 调用的skill | 说明 |
 |------|------------|------|
-| 从热点创建skill+文章 | inspiration-hunter | 灵感捕手Phase 3调用yinyo-writer写推广文章 |
+| 从热点创建skill+文章 | inspiration-hunter | 灵感捕手调用yinyo-writer写公众号推文 |
 | 文章配图/PPT | yinyo-ppt | 暖色极简PPT生成 |
 | 去AI味优化 | 本skill L1质检 | 禁用词+标点自动扫描 |
