@@ -415,13 +415,15 @@
 尾注要轻，不要像广告牌。
 
 ```html
-<section style="margin:36px 0 0;padding-top:18px;border-top:1px solid #EEE;">
-<p style="margin:0;font-size:13px;line-height:1.8;color:#999;">
-<span style="color:#B7793E;font-weight:700;">隐曜杂货铺</span><br/>
-一人 AI 实验室，真实评测，实用技能，自由探索。
+<section style="margin:36px 0 0;padding-top:18px;border-top:1px solid #EEE;box-sizing:border-box;">
+<p style="margin:0;font-size:13px;line-height:1.8;color:#999999;">
+<span style="color:#B7793E;font-weight:700;">yinyo 隐曜</span><br/>
+一人AI实验室，真实评测 · 实用技能 · 自由探索。
 </p>
 </section>
 ```
+
+硬性规则：尾注文案必须逐字固定为 `yinyo 隐曜` 和 `一人AI实验室，真实评测 · 实用技能 · 自由探索。`。只允许调整颜色/边距等轻排版，不允许改成「隐曜杂货铺」、不允许把 `一人AI实验室` 拆成 `一人 AI 实验室`、不允许把 `·` 改成逗号。
 
 ---
 

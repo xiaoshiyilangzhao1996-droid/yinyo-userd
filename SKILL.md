@@ -1,8 +1,8 @@
 ---
 name: yinyo-writer
-version: "3.6"
-last_updated: "2026-05-01"
-changelog: "v3.6: 沉淀 DeepSeek 视觉原语推文最终版方法论——以花叔95分微信原生感为底线，增加100+挑战版的主题视觉化策略，并固化最终融合版HTML参数、主观表达配比、摘要/代码/尾注微调规则"
+version: "3.7"
+last_updated: "2026-05-02"
+changelog: "v3.7: 修复尾注规范冲突——统一 Markdown 固定尾注与 HTML 轻品牌标识，强制所有公众号推文尾部使用 yinyo 隐曜 / 一人AI实验室 固定题注，不再输出隐曜杂货铺变体"
 description: |
   隐曜公众号引流写作方法论。主文风融合花叔DNA（短句/具体/结论先行）。
   输入素材（skill推广/热点蹭流/产品体验），输出公众号深度长文+HTML排版。
@@ -973,12 +973,14 @@ DeepSeek视觉原语这篇的答案是“空间指认系统”：
 - 关键行用`background:rgba(211,47,47,.06);font-weight:700;`。
 - 关键数字可用`font-size:18px;color:#d32f2f;font-weight:900;`。
 
-尾部品牌标识：
+尾部品牌标识（必须与固定尾注一致，只允许排版轻量化，不允许改文案）：
 ```html
-<section style="margin:38px 0 0;padding-top:18px;border-top:1px solid #eeeeee;">
-  <p style="margin:0;font-size:13px;line-height:1.82;color:#999999;"><span style="color:#d32f2f;font-weight:700;">隐曜杂货铺</span><br/>一人 AI 实验室，真实评测，实用技能，自由探索。</p>
+<section style="margin:36px 0 0;padding-top:18px;border-top:1px solid #EEE;box-sizing:border-box;">
+  <p style="margin:0;font-size:13px;line-height:1.8;color:#999999;"><span style="color:#B7793E;font-weight:700;">yinyo 隐曜</span><br/>一人AI实验室，真实评测 · 实用技能 · 自由探索。</p>
 </section>
 ```
+
+硬性规则：HTML 版尾部文字必须逐字等同固定尾注：`yinyo 隐曜 / 一人AI实验室，真实评测 · 实用技能 · 自由探索。`。禁止改成「隐曜杂货铺」、禁止把「一人AI实验室」拆成「一人 AI 实验室」、禁止把分隔点 `·` 改成逗号。
 
 不要把尾部品牌做成黑色金句卡片。长文读完后，尾部越干净越高级。
 
