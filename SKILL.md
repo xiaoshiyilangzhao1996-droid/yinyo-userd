@@ -2,7 +2,7 @@
 name: yinyo-writer
 version: "3.14"
 last_updated: "2026-05-05"
-changelog: "v3.14: 人格型写作转换十二式——Agent选型推文全流程实战沉淀；信息型vs人格型对照诊断；L4新增8.9专项检查；12条具体转换技术+正元速查10条"
+changelog: "v3.14: 人格型写作转换十二式（信息型vs人格型对照、12条转换技术、正元速查10条）+ 尾注升级卡片风（深靛蓝圆角名片、三点分隔线、隐曜红标签）；L4新增8.9专项检查"
 description: |
   隐曜公众号引流写作方法论。主文风融合花叔DNA（短句/具体/结论先行）。
   输入素材（skill推广/热点蹭流/产品体验），输出公众号深度长文+HTML排版。
@@ -445,17 +445,38 @@ Step 12: 排版为HTML（读取 references/wechat-html-layout.md） → 插入�
 
 ---
 
-### 尾注：个人IP标识（所有推文必加）
+### 尾注：个人IP卡片（所有推文必加，v3.14升级）
 
-每篇文章结尾必须附尾注，强化个人IP，格式固定：
+每篇文章结尾必须附名片风卡片，强化个人IP。
 
+**HTML模板（直接粘贴到公众号编辑器）：**
+
+```html
+<section style="text-align:center;color:#D32F2F;font-size:14px;letter-spacing:16px;margin:2.8em auto 1.6em;padding-left:16px;">···</section>
+
+<section style="display:flex;align-items:center;gap:14px;padding:18px 16px;background:#1a1a2e;border-radius:10px;color:#e0e0e0;overflow:hidden;">
+  <section style="width:72px;height:72px;border-radius:50%;overflow:hidden;flex:0 0 72px;border:2px solid #D32F2F;">
+    <img src="头像CDN地址" alt="隐曜" style="width:100%;display:block;" />
+  </section>
+  <section style="flex:1;">
+    <section style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px;">
+      <section style="font-size:18px;font-weight:700;color:#ffffff;letter-spacing:0.04em;">隐曜 yinyo</section>
+      <section style="font-family:&#39;SF Mono&#39;,Menlo,monospace;font-size:10px;color:#D32F2F;letter-spacing:0.18em;">AUTHOR</section>
+    </section>
+    <section style="font-size:12px;color:#ccc;line-height:1.65;">
+      一人AI实验室<br/>
+      真实评测 · 实用技能 · 自由探索
+    </section>
+  </section>
+</section>
 ```
-yinyo 隐曜
-一人AI实验室，真实评测 · 实用技能 · 自由探索。
-```
+
+**配色方案**：底色深靛蓝黑 #1a1a2e（🦁🌙调性）| 标签色 #D32F2F（隐曜红）| 头像描边 #D32F2F
 
 **规则：**
-- 尾注在正文最后一个句号之后、独立成段
+- 卡片上方加三点分隔线 `···`（红色、居中、字间距16px）
+- 头像占位符 `头像CDN地址` 需发布前替换为公众号素材库实际CDN地址
+- 卡片在正文最后一个句号之后、独立成段
 - 不加"感谢阅读"、不加emoji、不加链接
 - 这是个人品牌标识，必须出现在每一篇推文里
 
