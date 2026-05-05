@@ -452,18 +452,18 @@ Step 12: 排版为HTML（读取 references/wechat-html-layout.md） → 插入�
 **HTML模板（直接粘贴到公众号编辑器）：**
 
 ```html
-<section style="text-align:center;color:#D32F2F;font-size:14px;letter-spacing:16px;margin:2.8em auto 1.6em;padding-left:16px;">···</section>
+<section style="text-align:center;color:#C9A96E;font-size:14px;letter-spacing:16px;margin:2.8em auto 1.6em;padding-left:16px;">···</section>
 
-<section style="display:flex;align-items:center;gap:14px;padding:18px 16px;background:#1a1a2e;border-radius:10px;color:#e0e0e0;overflow:hidden;">
-  <section style="width:72px;height:72px;border-radius:50%;overflow:hidden;flex:0 0 72px;border:2px solid #D32F2F;">
+<section style="display:flex;align-items:center;gap:14px;padding:18px 16px;background:linear-gradient(135deg,#1a1a2e 0%,#12101f 40%,#0d0c17 100%);border-radius:10px;color:#e0e0e0;overflow:hidden;">
+  <section style="width:72px;height:72px;border-radius:50%;overflow:hidden;flex:0 0 72px;border:2px solid #C9A96E;">
     <img src="头像CDN地址" alt="隐曜" style="width:100%;display:block;" />
   </section>
   <section style="flex:1;">
     <section style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px;">
       <section style="font-size:18px;font-weight:700;color:#ffffff;letter-spacing:0.04em;">隐曜 yinyo</section>
-      <section style="font-family:&#39;SF Mono&#39;,Menlo,monospace;font-size:10px;color:#D32F2F;letter-spacing:0.18em;">AUTHOR</section>
+      <section style="font-family:&#39;SF Mono&#39;,Menlo,monospace;font-size:10px;color:#C9A96E;letter-spacing:0.18em;">AUTHOR</section>
     </section>
-    <section style="font-size:12px;color:#ccc;line-height:1.65;">
+    <section style="font-size:12px;color:#bbb;line-height:1.65;">
       一人AI实验室<br/>
       真实评测 · 实用技能 · 自由探索
     </section>
@@ -471,7 +471,7 @@ Step 12: 排版为HTML（读取 references/wechat-html-layout.md） → 插入�
 </section>
 ```
 
-**配色方案**：底色深靛蓝黑 #1a1a2e（🦁🌙调性）| 标签色 #D32F2F（隐曜红）| 头像描边 #D32F2F
+**配色方案（方案A 暖金渐隐）**：深靛蓝渐变底 `linear-gradient(135deg, #1a1a2e 0%, #12101f 40%, #0d0c17 100%)` | 暖金 `#C9A96E`（描边/标签/分隔线）| 描述文字 `#bbb`
 
 **规则：**
 - 卡片上方加三点分隔线 `···`（红色、居中、字间距16px）
